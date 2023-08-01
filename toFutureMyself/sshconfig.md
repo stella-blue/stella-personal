@@ -36,10 +36,10 @@ config 파일을 작성하려면 우선 rsa 키가 저장되어있는 .ssh 폴�
 중괄호 있는 부분은 중괄호 째로 지우고 주석(&#35;으로 시작하는 문장)에 있는 내용으로 알맞게 바꾸기
 
 ```
-Host &#123;aaa&#125; &#35;rsa 키 이름이 id-rsa-aaa였으니까, aaa로 입력함.
-&nbsp; HostName github.com
-&nbsp; User git
-&nbsp; IdentityFile &#123;~/.ssh/id_rsa_aaa&#125; &#35;마찬가지로 내 id가 aaa여서...
+Host [aaa] #rsa 키 이름이 id-rsa-aaa였으니까, aaa로 입력함.
+  HostName github.com
+  User git
+  IdentityFile [~/.ssh/id_rsa_aaa] #마찬가지로 내 id가 aaa여서...
 ```
 
 이거말고도 설정할수있는건 더 있지만 필수는 위의 네가지
@@ -47,7 +47,7 @@ Host &#123;aaa&#125; &#35;rsa 키 이름이 id-rsa-aaa였으니까, aaa로 입�
 이뒤에 콘솔창에
 
 ```
-ssh -T git@&#123;aaa&#125;
+ssh -T git@[aaa]
 ```
 
 치면 Hi 뫄뫄! 하면서 성공적으로 인증되었다는 문구가 뜸. (당연하지만 이전에 github 계정이 암호의 공개키를 등록해놨어야 git에 접속이 됨!)
